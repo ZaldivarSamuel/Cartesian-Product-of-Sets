@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include <string>
-#include "Node.h"
+#include "Element.h"
 #include "Set.h"
 using namespace std;
 
@@ -37,7 +37,7 @@ int main(){
     
     string element = "";
     
-    cout << "Enter the elements for the first set. Press [ENTER] after each element." << endl << "To end the set type 'Done' then [ENTER]" << endl << endl;
+    cout << "Press [ENTER] after each element." << endl << "To end the set type 'Done' then [ENTER]" << endl << endl << "Enter the elements for the first set."<< endl;
     
     cout << "Set A: " << endl;
         

@@ -6,19 +6,19 @@
 //  Copyright © 2020 Samuel Zaldivar. All rights reserved.
 //
 
-#include "Node.h"
+#include "Element.h"
 #include <iostream>
 #include <string>
 
-Node::Node(string s){
-    element = s;
-    nextNode = NULL;
+Element::Element(string s){
+    value = s;
+    nextElement = NULL;
 }
 
-string Node::getElement(){
-    return element;
+string Element::getValue(){
+    return value;
 }
 
-void Node::setNext(Node * n){
-    nextNode = n;
+void Element::setNext(Element * n){
+    nextElement = n;
 }

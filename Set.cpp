@@ -8,6 +8,7 @@
 
 #include "Set.h"
 #include <string>
+#include <iostream>
 using namespace std;
 Set::Set(){
     head = NULL;
@@ -15,25 +16,25 @@ Set::Set(){
 
 void Set::addElement(string element){
     
-    Node *newElement = new Node(element);
+    Element *newElement = new Element(element);
     
     if(head == NULL)
         head = newElement;
     else{
-        Node *indexNode = head;
+        Element *indexNode = head;
         
         do{
-            if(indexNode->nextNode == NULL){
-                indexNode->nextNode = newElement;
+            if(indexNode->nextElement == NULL){
+                indexNode->nextElement = newElement;
             }
             else{
-                indexNode = indexNode->nextNode;
+                indexNode = indexNode->nextElement;
             }
-        }while(indexNode->nextNode != NULL);
+        }while(indexNode->nextElement != NULL);
     }
     
-    Node *indexNode = head;
-    while(indexNode->nextNode != NULL){
-        cout << indexNode->getElement() << " ";
+    Element *indexNode = head;
+    while(indexNode->nextElement != NULL){
+        cout << indexNode->getValue() << " ";
     }
 }

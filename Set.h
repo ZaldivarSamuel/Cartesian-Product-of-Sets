@@ -11,13 +11,13 @@
 
 #include <stdio.h>
 #include <string>
-#include "Node.h"
+#include "Element.h"
 
 class Set{
 private:
     
 public:
-    Node* head;
+    Element* head;
     Set();
     void addElement(string);
 };

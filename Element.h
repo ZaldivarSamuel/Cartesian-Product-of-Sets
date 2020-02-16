@@ -6,25 +6,25 @@
 //  Copyright © 2020 Samuel Zaldivar. All rights reserved.
 //
 
-#ifndef Node_h
-#define Node_h
+#ifndef Element_h
+#define Element_h
 
 #include <stdio.h>
 #include <string>
 
 using namespace std;
 
-class Node{
+class Element{
 
 private:
-    string element;
+    string value;
     
 public:
-    Node *nextNode;
+    Element *nextElement;
     
-    Node(string);
-    string getElement();
-    void setNext(Node*);
+    Element(string);
+    string getValue();
+    void setNext(Element*);
 };
 
 #endif /* Node_h */
