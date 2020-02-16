@@ -43,4 +43,5 @@ int main(){
             setA->addElement(element);
     }
     
+    setA->printSet();
 }

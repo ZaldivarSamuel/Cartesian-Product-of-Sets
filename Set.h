@@ -20,6 +20,7 @@ public:
     Element* head;
     Set();
     void addElement(string);
+    void printSet();
 };
 
 #endif /* Set_hpp */

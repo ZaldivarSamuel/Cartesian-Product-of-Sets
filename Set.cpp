@@ -15,14 +15,17 @@ Set::Set(){
     head = NULL;
 }
 
-void Set::addElement(string element){
-        
-    Element *newElement = new Element(element);
+void Set::addElement(string value){
     
+    //Create new element
+    Element *newElement = new Element(value);
+    
+    //Add element to the set. If head is null then the newElement becomes the head.
     if(head == NULL){
         head = newElement;
     }
     else{
+        //Find the last element and add the newElement
         Element *currentElement = head;
         
         while(currentElement->nextElement != NULL){
@@ -30,5 +33,20 @@ void Set::addElement(string element){
         }
         currentElement->nextElement = newElement;
 
+    }
+}
+
+void Set::printSet(){
+    
+    //Check for empty set
+    if(head == NULL)
+        cout << endl << "Empty Set" << endl;
+    else{
+        //Loop through each element in the set and print out the value
+        Element *currentElement = head;
+        do{
+            cout << currentElement->getValue() << " ";
+            currentElement = currentElement->nextElement;
+        }while(currentElement != NULL);
     }
 }
