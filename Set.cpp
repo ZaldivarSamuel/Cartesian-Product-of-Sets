@@ -63,25 +63,34 @@ void Set::printSet(){
 
 string Set::getCartesianProduct(Set *setB){
     
+    /*
+     The cartesian product can not be calculated with empty sets.
+     If either set is empty return an error message.
+     */
     if(head == NULL){ return errorMssg(name); }
     if(setB->head == NULL) {return errorMssg(setB->name);}
     
     string cartesianProduct = name + " X " + setB->name + " = {";
     
+    /*
+     Loop through each element of set A.
+     For each element in set A loop through each element in set B then take the product.
+     */
     Element *currentElementInSet_A = head;
+    //set A loop
     do{
         Element *currentElementInSet_B = setB->head;
+        
+        //set B loop
         do{
             cartesianProduct += "(" + currentElementInSet_A->getValue() + ", " + currentElementInSet_B->getValue() + ")";
             
+            //Add a comma after each product except for the last product.
             if(currentElementInSet_A->nextElement != NULL || currentElementInSet_B->nextElement != NULL) {cartesianProduct += ", "; }
             
-            
             currentElementInSet_B = currentElementInSet_B->nextElement;
-            
-            
+    
         }while(currentElementInSet_B != NULL);
-        
         
         currentElementInSet_A = currentElementInSet_A->nextElement;
     }while(currentElementInSet_A != NULL);
