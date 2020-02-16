@@ -21,6 +21,8 @@ struct Set{
     Set(string);
     void addElement(string);
     void printSet();
+    string getCartesianProduct(Set*);
+    string errorMssg(string);
 };
 
 #endif /* Set_hpp */

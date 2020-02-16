@@ -60,3 +60,37 @@ void Set::printSet(){
         cout << "}" << endl;
     }
 }
+
+string Set::getCartesianProduct(Set *setB){
+    
+    if(head == NULL){ return errorMssg(name); }
+    if(setB->head == NULL) {return errorMssg(setB->name);}
+    
+    string cartesianProduct = name + " X " + setB->name + " = {";
+    
+    Element *currentElementInSet_A = head;
+    do{
+        Element *currentElementInSet_B = setB->head;
+        do{
+            cartesianProduct += "(" + currentElementInSet_A->getValue() + ", " + currentElementInSet_B->getValue() + ")";
+            
+            if(currentElementInSet_A->nextElement != NULL || currentElementInSet_B->nextElement != NULL) {cartesianProduct += ", "; }
+            
+            
+            currentElementInSet_B = currentElementInSet_B->nextElement;
+            
+            
+        }while(currentElementInSet_B != NULL);
+        
+        
+        currentElementInSet_A = currentElementInSet_A->nextElement;
+    }while(currentElementInSet_A != NULL);
+    
+    cartesianProduct += "}";
+    
+    return cartesianProduct;
+}
+
+string Set::errorMssg(string setName){
+    return "Set " + setName + " is empty. Unable to calculate Cartesian Product.";
+}

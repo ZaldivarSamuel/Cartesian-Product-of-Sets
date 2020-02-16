@@ -12,16 +12,6 @@
 #include "Set.h"
 using namespace std;
 
-//void setHeadForSet1(Set *set){
-//    Node *n1 = new Node("Hello");
-//    set->head = n1;
-//}
-//
-//void setHeadForSet2(Set *set){
-//    Node *n1 = new Node(" Cristina");
-//    set->head = n1;
-//}
-
 void enterSet(string, Set*);
 
 int main(){
@@ -33,6 +23,10 @@ int main(){
     
     enterSet(setA->name, setA);
     enterSet(setB->name, setB);
+    
+    string cartesianProduct = setA->getCartesianProduct(setB);
+    
+    cout << endl << cartesianProduct << endl << endl;
 }
 
 void enterSet(string setName, Set *set){
