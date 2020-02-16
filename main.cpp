@@ -19,7 +19,7 @@ int main(){
     Set *setA = new Set("A");
     Set *setB = new Set("B");
     
-    cout << "Press [ENTER] after each element." << endl << "To end the set type 'Done' then [ENTER]" << endl;
+    cout << "Press [ENTER] after each element." << endl << "To end press [ENTER] to a blank element." << endl;
     
     enterSet(setA->name, setA);
     enterSet(setB->name, setB);
