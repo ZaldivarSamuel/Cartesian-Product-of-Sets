@@ -13,12 +13,12 @@
 #include <string>
 #include "Element.h"
 
-class Set{
-private:
+struct Set{
     
-public:
     Element* head;
-    Set();
+    string name;
+    
+    Set(string);
     void addElement(string);
     void printSet();
 };

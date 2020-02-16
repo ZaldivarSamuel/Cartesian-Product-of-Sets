@@ -11,8 +11,9 @@
 #include <iostream>
 using namespace std;
 
-Set::Set(){
+Set::Set(string name){
     head = NULL;
+    this->name = name;
 }
 
 void Set::addElement(string value){
@@ -39,14 +40,23 @@ void Set::addElement(string value){
 void Set::printSet(){
     
     //Check for empty set
+    cout << name << " = ";
+    
     if(head == NULL)
-        cout << endl << "Empty Set" << endl;
+        cout << "Empty Set" << endl;
     else{
+        
+        cout << "{";
+        
         //Loop through each element in the set and print out the value
         Element *currentElement = head;
         do{
-            cout << currentElement->getValue() << " ";
+            cout << currentElement->getValue();
+            
+            if(currentElement->nextElement != NULL){ cout << ", "; }
             currentElement = currentElement->nextElement;
+            
         }while(currentElement != NULL);
+        cout << "}" << endl;
     }
 }
