@@ -10,31 +10,25 @@
 #include <string>
 #include <iostream>
 using namespace std;
+
 Set::Set(){
     head = NULL;
 }
 
 void Set::addElement(string element){
-    
+        
     Element *newElement = new Element(element);
     
-    if(head == NULL)
+    if(head == NULL){
         head = newElement;
-    else{
-        Element *indexNode = head;
-        
-        do{
-            if(indexNode->nextElement == NULL){
-                indexNode->nextElement = newElement;
-            }
-            else{
-                indexNode = indexNode->nextElement;
-            }
-        }while(indexNode->nextElement != NULL);
     }
-    
-    Element *indexNode = head;
-    while(indexNode->nextElement != NULL){
-        cout << indexNode->getValue() << " ";
+    else{
+        Element *currentElement = head;
+        
+        while(currentElement->nextElement != NULL){
+            currentElement = currentElement->nextElement;
+        }
+        currentElement->nextElement = newElement;
+
     }
 }
