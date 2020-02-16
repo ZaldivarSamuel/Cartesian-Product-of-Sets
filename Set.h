@@ -10,6 +10,7 @@
 #define Set_h
 
 #include <stdio.h>
+#include <string>
 #include "Node.h"
 
 class Set{
@@ -18,6 +19,7 @@ private:
 public:
     Node* head;
     Set();
+    void addElement(string);
 };
 
 #endif /* Set_hpp */

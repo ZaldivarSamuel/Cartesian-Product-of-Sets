@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <string>
 #include "Node.h"
 #include "Set.h"
 using namespace std;
@@ -25,8 +26,8 @@ using namespace std;
 
 int main(){
     
-//    Set *set1 = new Set;
-//    Set *set2 = new Set;
+    Set *setA = new Set;
+    Set *setB = new Set;
 //
 //    setHeadForSet1(set1);
 //    setHeadForSet2(set2);
@@ -34,6 +35,18 @@ int main(){
 //    cout << set1->head->getElement() << endl;
 //    cout << set2->head->getElement() << endl;
     
-    cout << "Enter the first set" << endl;
+    string element = "";
+    
+    cout << "Enter the elements for the first set. Press [ENTER] after each element." << endl << "To end the set type 'Done' then [ENTER]" << endl << endl;
+    
+    cout << "Set A: " << endl;
+        
+    while(true){
+        getline(cin, element);
+        if(element.empty())
+            break;
+        else
+            cout << "Entered: " << element << endl;
+    }
     
 }
